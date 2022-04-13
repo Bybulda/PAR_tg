@@ -1,4 +1,3 @@
-import os
 import configure  # Файл, содержащий уникальную информацию о боте
 import data_base_user as db
 import func_db as f_db
@@ -242,7 +241,3 @@ def get_text(message):
 
 
 client.polling(none_stop=True, interval=0)
-
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)

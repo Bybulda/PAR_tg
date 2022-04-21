@@ -121,8 +121,7 @@ def ban(com):
     elif len(com[1].split(':')) > 1:
         if com[2] in ['true', 't', 'false', 'f']:
             user_id = int(com[1].split(':')[1])
-            # if (not db.check_id_bd(user_id)) and (not r_db.check_root_id(user_id)):
-            if not db.check_id_bd(user_id):
+            if (not db.check_id_bd(user_id)) and (not r_db.check_root_id(user_id)):
                 if com[2] in ['t', 'true']:
                     db.update_info(user_id, 'banned', 1)
                     r_db.set_ban_time(user_id)

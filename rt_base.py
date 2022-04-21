@@ -52,8 +52,8 @@ def del_any(who, base, tab):
 def get_user_info():
     conn = sqlite3.connect("user_all.db")
     cursor = conn.cursor()
-    res = [[str(i[0]), str(i[1]), str(i[2]), str(i[3]), str(i[4])] for i in
-           list(cursor.execute(f"SELECT user_id, fav_nick, fav_cost, fav_curr, fav_gen FROM user_data;"))]
+    res = [[str(i[0]), str(i[1]), str(i[2]), str(i[3]), str(i[4]), str(5)] for i in
+           list(cursor.execute(f"SELECT user_id, fav_nick, fav_cost, fav_curr, fav_gen, banned FROM user_data;"))]
     return '\n'.join(' - '.join(i) for i in res)
 
 
